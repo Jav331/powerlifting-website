@@ -20,8 +20,8 @@ export default function Navbar() {
                 <li><CustomLink to="/">Home</CustomLink></li>
                 <li><CustomLink to="/calculate">One Rep Max</CustomLink></li>
                 <li><CustomLink to="/plan">Create Plan</CustomLink></li>
-                <li><CustomLink to="/compare">Compare Strength</CustomLink></li>
                 <li><CustomLink to="/track">Track Progress</CustomLink></li>
+                <li><CustomLink to="/compare">Compare Strength</CustomLink></li>
                 {isAuthenticated ? (
                     <li><button onClick={logout}>Logout</button></li>
                 ) : (
