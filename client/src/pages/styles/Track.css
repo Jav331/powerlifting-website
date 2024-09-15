@@ -1,0 +1,181 @@
+@import 'react-big-calendar/lib/css/react-big-calendar.css';
+
+/* Track container styles */
+.track-container {
+  height: 100vh;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.track-content {
+  display: flex;
+  height: calc(100% - 100px);
+}
+
+.calendar-container {
+  flex-grow: 1;
+  margin-right: 20px;
+  position: relative;
+  z-index: 1; /* Ensure it's below the modal overlay */
+}
+
+.form-container {
+  width: 300px;
+}
+
+/* Custom date cell styles */
+.custom-date-cell {
+  transition: background-color 0.3s ease;
+}
+
+.custom-date-cell:hover {
+  background-color: #f0f0f0 !important;
+}
+
+.selected-day-cell {
+  background-color: #9b9b9b !important;
+  color: white !important;
+}
+
+/* Custom event styles */
+.custom-event {
+  position: relative;
+  height: 100%;
+  cursor: pointer;
+  padding: 2px 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure the overlay is above other elements */
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 100%;
+  position: relative; /* Needed for z-index to work */
+  z-index: 1001; /* Ensure the content is above the overlay */
+}
+
+/* Form styles */
+.track-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.track-container input[type="date"],
+.track-container textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.track-container textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+/* Button styles specific to the Track component */
+.track-container button {
+  /* Reset to default styles */
+  all: unset;
+  cursor: pointer;
+}
+
+/* Toolbar button styles */
+.track-container .rbc-toolbar {
+  margin-bottom: 10px;
+}
+
+.track-container .rbc-toolbar button {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.track-container .rbc-toolbar button:hover {
+  background-color: #e0e0e0;
+}
+
+.track-container .rbc-toolbar-label {
+  font-weight: bold;
+}
+
+/* Add Workout button styles */
+.track-container .add-workout-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.track-container .add-workout-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Delete button styles */
+.track-container .delete-button {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* Modal close button styles */
+.track-container .modal-content button {
+  padding: 5px 15px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-block;
+  width: auto;
+  text-align: center;
+}
+
+.track-container .modal-content button:hover {
+  background-color: #e0e0e0;
+}
