@@ -6,11 +6,13 @@ function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
+        setIsLoading(true);
 
         try {
             const response = await axios.post('https://6r2f6r0qfc.execute-api.us-east-2.amazonaws.com/login', 
@@ -26,8 +28,20 @@ function Login() {
             localStorage.setItem('userId', response.data.userId);
             navigate('/track');
         } catch (error) {
-            console.error('Login error:', error.response ? error.response.data : error.message);
-            setError('Invalid username or password');
+            console.error('Login error:', error);
+            if (error.response) {
+                // The request was made and the server responded with a status code
+                // that falls out of the range of 2xx
+                setError(`Server error: ${error.response.data.error || 'Unknown error'}`);
+            } else if (error.request) {
+                // The request was made but no response was received
+                setError('No response from server. Please try again later.');
+            } else {
+                // Something happened in setting up the request that triggered an Error
+                setError('An unexpected error occurred. Please try again.');
+            }
+        } finally {
+            setIsLoading(false);
         }
     }
 
@@ -58,7 +72,9 @@ function Login() {
                         required
                     />
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit" disabled={isLoading}>
+                    {isLoading ? 'Logging in...' : 'Login'}
+                </button>
                 {error && <p style={{color: 'red'}}>{error}</p>}
             </form>
             <p>
