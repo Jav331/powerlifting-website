@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use(cors({
-  origin: ['https://main.dhneriygykmo0.amplifyapp.com', 'http://localhost:3001'], // frontend URLs
+  origin: ['https://mypowerliftingapp.xyz', 'https://www.mypowerliftingapp.xyz', 'http://localhost:3000'], // frontend URLs
   methods: ['GET', 'POST', 'DELETE', 'OPTION'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: false
