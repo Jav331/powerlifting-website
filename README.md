@@ -1,1 +1,1 @@
-https://main.dhneriygykmo0.amplifyapp.com/
+https://mypowerliftingapp.xyz/
