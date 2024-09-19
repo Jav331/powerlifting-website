@@ -7,7 +7,7 @@ require('dotenv').config();
 
 // CORS configuration
 app.use(cors({
-    origin: ['https://main.dhneriygykmo0.amplifyapp.com', 'http://localhost:3000'], // frontend URLs
+    origin: ['https://mypowerliftingapp.xyz', 'https://www.mypowerliftingapp.xyz', 'https://main.dhneriygykmo0.amplifyapp.com', 'http://localhost:3000'], // frontend URLs
     methods: ['GET', 'POST', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
